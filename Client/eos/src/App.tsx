@@ -9,8 +9,6 @@ import Footer from './partials/footer';
 
 
 
-
-
 function App() {
 
 
