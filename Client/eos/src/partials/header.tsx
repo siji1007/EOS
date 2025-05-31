@@ -3,11 +3,11 @@ import Logo from '../assets/logo/logo.png'
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-[#304E6F] text-white shadow">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center">
             <img className="h-10 w-12 rounded-full" src={Logo} alt="Logo" />
             <div>
               <h1 className="text-sm font-bold leading-tight">EOS</h1>

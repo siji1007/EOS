@@ -1,3 +1,7 @@
+IMPORTS
+- npm install @heroicons/react
+
+
 To open the client side [FRONTEND]
 1. npm install
 2. npm run dev
