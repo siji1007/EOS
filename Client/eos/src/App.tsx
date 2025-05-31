@@ -12,34 +12,30 @@ import Assessment from './admin/Assessment';
 import Track from './admin/Track';
 import Settings from './admin/Settings';
 
-
-
-
-
 function App() {
-
-
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-        <Route path="/admin" element={<LandingPage />}>
-          <Route index element={<Navigate to="Form" replace />} /> 
-          <Route path="Form" element={<FormLayout />} />
-          <Route path="Assessment" element={<Assessment />} />
-          <Route path="Track" element={<Track />} />
-          <Route path="Settings" element={<Settings />} />
-        </Route>
+            <Route path="/admin" element={<LandingPage />}>
+              <Route index element={<Navigate to="Form" replace />} /> 
+              <Route path="Form" element={<FormLayout />} />
+              <Route path="Assessment" element={<Assessment />} />
+              <Route path="Track" element={<Track />} />
+              <Route path="Settings" element={<Settings />} />
+            </Route>
 
-
-
-
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
-  )
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
