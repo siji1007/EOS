@@ -1,86 +1,104 @@
+import {useState} from "react";
+
 const SixthForm = () => {
-    return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
-            
-            <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
-            <div>
-                <label className="block mb-1">Full Name:</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div className="flex gap-4">
-                <div className="flex-1">
-                <label className="block mb-1">Tax No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-                </div>
-                <div className="flex-1">
-                <label className="block mb-1">Date of application:</label>
-                <input type="date" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
+    const [formData, setFormData] = useState({
+    prcRegNo: '',
+    dateIssued: '',
+    printName: '',
+    placeIssued: '',
+    address: '',
+    ptrNo: ''
+  });
 
-            {/* Row 2 */}
-            <div>
-                <label className="block mb-1">Construction by Enterprise</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Telephone No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-            {/* Row 3 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Full Address</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
+  return (
+    <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
+      <div className="grid grid-cols-2 gap-6">
+        {/* Left Column */}
+        <div className="space-y-6">
+          {/* PRC REG NO. */}
+          <div>
+            <label className="block mb-2 font-semibold">PRC REG NO.</label>
+            <input 
+              type="text" 
+              name="prcRegNo"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.prcRegNo}
+              onChange={handleInputChange}
+            />
+          </div>
 
-            {/* Row 4 */}
-            <div>
-                <label className="block mb-1">Location of construction</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Select below:</label>
-                <div className="flex gap-2">
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Scope of works</option>
-                    <option>Renovation</option>
-                    <option>New Construction</option>
-                </select>
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Occupancy</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                </select>
-                </div>
-            </div>
+          {/* Print Name */}
+          <div>
+            <label className="block mb-2 font-semibold">Print Name</label>
+            <input 
+              type="text" 
+              name="printName"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.printName}
+              onChange={handleInputChange}
+            />
+          </div>
 
-            {/* Row 5 */}
-            <div>
-                <label className="block mb-1">Form of ownership</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Number of unit</label>
-                <div className="flex gap-2">
-                <select className="border rounded px-3 py-2">
-                    <option>Select</option>
-                    <option>Block</option>
-                    <option>Flat</option>
-                </select>
-                <input type="number" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
+          {/* Address */}
+          <div>
+            <label className="block mb-2 font-semibold">Address</label>
+            <input 
+              type="text" 
+              name="address"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.address}
+              onChange={handleInputChange}
+            />
+          </div>
 
-            {/* Row 6 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Main Economic/Kind of business</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            </div>
-            </div>
-    );
+          {/* PTR NO. */}
+          <div>
+            <label className="block mb-2 font-semibold">PTR NO.</label>
+            <input 
+              type="text" 
+              name="ptrNo"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.ptrNo}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="space-y-6">
+          {/* Date Issued */}
+          <div>
+            <label className="block mb-2 font-semibold">Date Issued</label>
+            <input 
+              type="date" 
+              name="dateIssued"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.dateIssued}
+              onChange={handleInputChange}
+              placeholder="_ / _ / _"
+            />
+          </div>
+
+          {/* Place Issued */}
+          <div>
+            <label className="block mb-2 font-semibold">Place Issued</label>
+            <input 
+              type="text" 
+              name="placeIssued"
+              className="w-full border border-black rounded px-4 py-3"
+              value={formData.placeIssued}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SixthForm;

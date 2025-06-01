@@ -41,10 +41,9 @@ const SecondForm = () => {
         </div>
         <div>
           <label className="block mb-1">
-            Prop. Date of Const. <br />
-            Expected Date of Completion
+            Prop. Date of Const. Expected Date of Completion
           </label>
-          <input type="text" className="w-full border rounded px-3 py-2" />
+          <input type="date" className="w-full border rounded px-3 py-2" />
         </div>
 
         {/* Row 4 */}

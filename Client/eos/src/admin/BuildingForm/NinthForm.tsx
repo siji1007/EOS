@@ -1,85 +1,98 @@
+import {useState} from 'react';
+
 const NinthForm = () => {
+    const [formData, setFormData] = useState({
+    octTctNo: '',
+    printNameLtOwner: '',
+    address: '',
+    tin: '',
+    taxDeclaration: '',
+    communityTaxCertificate: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
-            
-            <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
-            <div>
-                <label className="block mb-1">Full Name:</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div className="flex gap-4">
-                <div className="flex-1">
-                <label className="block mb-1">Tax No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-                </div>
-                <div className="flex-1">
-                <label className="block mb-1">Date of alication:</label>
-                <input type="date" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
+        <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
+      <h1 className="text-2xl text-center mb-12">To be accomplished by lot owner</h1>
+      
+      <div className="space-y-8">
+        {/* OCT / TCT NO. */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">OCT / TCT NO.</label>
+          <input 
+            type="text" 
+            name="octTctNo"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.octTctNo}
+            onChange={handleInputChange}
+          />
+        </div>
 
-            {/* Row 2 */}
-            <div>
-                <label className="block mb-1">Construction by Enterprise</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Telephone No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
+        {/* Print Name of LT Owner */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">Print Name of LT Owner</label>
+          <input 
+            type="text" 
+            name="printNameLtOwner"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.printNameLtOwner}
+            onChange={handleInputChange}
+          />
+        </div>
 
-            {/* Row 3 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Full Address</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
+        {/* Address */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">Address</label>
+          <input 
+            type="text" 
+            name="address"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.address}
+            onChange={handleInputChange}
+          />
+        </div>
 
-            {/* Row 4 */}
-            <div>
-                <label className="block mb-1">Location of construction</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Select below:</label>
-                <div className="flex gap-2">
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Scope of works</option>
-                    <option>Renovation</option>
-                    <option>New Construction</option>
-                </select>
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Occupancy</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                </select>
-                </div>
-            </div>
+        {/* TIN */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">TIN</label>
+          <input 
+            type="text" 
+            name="tin"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.tin}
+            onChange={handleInputChange}
+          />
+        </div>
 
-            {/* Row 5 */}
-            <div>
-                <label className="block mb-1">Form of ownership</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Number of unit</label>
-                <div className="flex gap-2">
-                <select className="border rounded px-3 py-2">
-                    <option>Select</option>
-                    <option>Block</option>
-                    <option>Flat</option>
-                </select>
-                <input type="number" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
+        {/* Tax Declaration */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">Tax Declaration</label>
+          <input 
+            type="text" 
+            name="taxDeclaration"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.taxDeclaration}
+            onChange={handleInputChange}
+          />
+        </div>
 
-            {/* Row 6 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Main Economic/Kind of business</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            </div>
-            </div>
+        {/* Community Tax Certificate */}
+        <div className="flex items-center gap-8">
+          <label className="font-semibold w-48">Community Tax Certificate</label>
+          <input 
+            type="text" 
+            name="communityTaxCertificate"
+            className="flex-1 border border-black rounded px-4 py-3"
+            value={formData.communityTaxCertificate}
+            onChange={handleInputChange}
+          />
+        </div>
+      </div>
+    </div>
     );
 }
 

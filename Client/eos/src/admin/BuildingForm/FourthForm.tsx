@@ -2,86 +2,140 @@
 
 const FourthForm = () => {
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
-            
-            <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
+         <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
+      <h1 className="text-2xl  text-center mb-8">Progress Flow in</h1>
+      
+      {/* Progress Flow Section */}
+      <div className="mb-8">
+        <div className="grid grid-cols-2 gap-8">
+          {/* Left Column */}
+          <div className="space-y-6">
+            {/* Receiving and Receiving */}
             <div>
-                <label className="block mb-1">FName:</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div className="flex gap-4">
-                <div className="flex-1">
-                <label className="block mb-1">Tax No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-                </div>
-                <div className="flex-1">
-                <label className="block mb-1">Date of application:</label>
-                <input type="date" className="w-full border rounded px-3 py-2" />
-                </div>
+              <h3 className="font-semibold mb-3">Receiving and Receiving</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
 
-            {/* Row 2 */}
+            {/* Land Use and Zoning */}
             <div>
-                <label className="block mb-1">Construction by Enterprise</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Telephone No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
+              <h3 className="font-semibold mb-3">Land Use and Zoning</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
 
-            {/* Row 3 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Full Address</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
+            {/* Geodetic (Line and Grade) */}
+            <div>
+              <h3 className="font-semibold mb-3">Geodetic (Line and Grade)</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
 
-            {/* Row 4 */}
+            {/* Architectural */}
             <div>
-                <label className="block mb-1">Location of construction</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Select below:</label>
-                <div className="flex gap-2">
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Scope of works</option>
-                    <option>Renovation</option>
-                    <option>New Construction</option>
-                </select>
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Occupancy</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                </select>
-                </div>
+              <h3 className="font-semibold mb-3">Architectural</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
 
-            {/* Row 5 */}
+            {/* Structural */}
             <div>
-                <label className="block mb-1">Form of ownership</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
+              <h3 className="font-semibold mb-3">Structural</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Sanitary */}
             <div>
-                <label className="block mb-1">Number of unit</label>
-                <div className="flex gap-2">
-                <select className="border rounded px-3 py-2">
-                    <option>Select</option>
-                    <option>Block</option>
-                    <option>Flat</option>
-                </select>
-                <input type="number" className="w-full border rounded px-3 py-2" />
-                </div>
+              <h3 className="font-semibold mb-3">Sanitary</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
 
-            {/* Row 6 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Main Economic/Kind of business</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
+            {/* Electrical */}
+            <div>
+              <h3 className="font-semibold mb-3">Electrical</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
+
+            {/* Mechanical */}
+            <div>
+              <h3 className="font-semibold mb-3">Mechanical</h3>
+              <div className="flex gap-2">
+                <input 
+                  type="time" 
+                  className="border rounded px-3 py-2 w-24"
+                />
+                <input 
+                  type="date" 
+                  className="flex-1 border rounded px-3 py-2"
+                />
+              </div>
             </div>
-            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     );
 }
 

@@ -1,85 +1,78 @@
+import { useState } from 'react';
+
 const FifthForm = () => {
+    const departments = [
+    "Receiving and Receiving",
+    "Land Use and Zoning", 
+    "Geodetic (Line and Grade)",
+    "Architectural",
+    "Structural",
+    "Sanitary",
+    "Electrical",
+    "Mechanical"
+  ];
+
+  const [formData, setFormData] = useState(
+    departments.map(() => ({
+      time: "",
+      date: "",
+      remarks: "",
+      status: "⌄"
+    }))
+  );
+
+  const handleInputChange = (index: number, field: string, value: string) => {
+    const updatedData = [...formData];
+    updatedData[index] = { ...updatedData[index], [field]: value };
+    setFormData(updatedData);
+  };
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
-            
-            <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
-            <div>
-                <label className="block mb-1">Full Name:</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div className="flex gap-4">
-                <div className="flex-1">
-                <label className="block mb-1">Tax No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
+        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto mt-8">
+        <h3 className="text-xl font-semibold mb-6 text-center">Progress Flow in</h3>
+
+        <div className="space-y-4">
+            {departments.map((department, idx) => (
+            <div key={idx} className="grid grid-cols-4 gap-2 items-center">
+                <label className="font-medium">{department}</label>
+                <div className='grid grid-cols-2 gap-3'>
+                    <input
+                    type="time"
+                    value={formData[idx].time}
+                    onChange={(e) => handleInputChange(idx, 'time', e.target.value)}
+                    className="w-full border rounded px-4 py-2 text-center"
+                    placeholder="--"
+                    />
+                    <input
+                    type="date"
+                    value={formData[idx].date}
+                    onChange={(e) => handleInputChange(idx, 'date', e.target.value)}
+                    className="w-full border rounded px-4 py-2 text-center"
+                    />
                 </div>
-                <div className="flex-1">
-                <label className="block mb-1">Date of application:</label>
-                <input type="date" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
+                    
+                    <input
+                    type="text"
+                    placeholder="Remarks"
+                    value={formData[idx].remarks}
+                    onChange={(e) => handleInputChange(idx, 'remarks', e.target.value)}
+                    className="w-full border rounded px-4 py-2"
+                    />
+                    <select 
+                    value={formData[idx].status}
+                    onChange={(e) => handleInputChange(idx, 'status', e.target.value)}
+                    className="w-full border rounded px-4 py-2 text-center"
+                    >
 
-            {/* Row 2 */}
-            <div>
-                <label className="block mb-1">Construction by Enterprise</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Telephone No.</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-
-            {/* Row 3 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Full Address</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-
-            {/* Row 4 */}
-            <div>
-                <label className="block mb-1">Location of construction</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Select below:</label>
-                <div className="flex gap-2">
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Scope of works</option>
-                    <option>Renovation</option>
-                    <option>New Construction</option>
+                    {/*IDK KUNG PARA SAAN UNG DROPDOWN HAHAHA*/}
+                    <option value="status">Status</option>
+                    <option value="done">Finished</option>
+                    <option value="discard">Discarded</option>
+                    <option value="halt">Halted</option>
                 </select>
-                <select className="w-full border rounded px-3 py-2">
-                    <option>Occupancy</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                </select>
-                </div>
             </div>
-
-            {/* Row 5 */}
-            <div>
-                <label className="block mb-1">Form of ownership</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-                <label className="block mb-1">Number of unit</label>
-                <div className="flex gap-2">
-                <select className="border rounded px-3 py-2">
-                    <option>Select</option>
-                    <option>Block</option>
-                    <option>Flat</option>
-                </select>
-                <input type="number" className="w-full border rounded px-3 py-2" />
-                </div>
-            </div>
-
-            {/* Row 6 */}
-            <div className="col-span-2">
-                <label className="block mb-1">Main Economic/Kind of business</label>
-                <input type="text" className="w-full border rounded px-3 py-2" />
-            </div>
-            </div>
-            </div>
+            ))}
+        </div>
+        </div>
     );
 }
 
