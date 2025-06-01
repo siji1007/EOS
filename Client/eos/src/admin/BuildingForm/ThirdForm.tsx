@@ -30,7 +30,7 @@ const ThirdForm = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto mt-8">
+    <div className="rounded-lg w-full shadow-lg relative align-center mx-auto mt-8">
       <h3 className="text-xl font-semibold mb-6 text-center">Assessed Fee</h3>
 
       <div className="grid grid-cols-5 gap-4 items-center">

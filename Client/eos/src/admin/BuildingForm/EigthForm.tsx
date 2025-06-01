@@ -1,6 +1,6 @@
 const EighthForm = () => {
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
+        <div className="rounded-lg w-full relative align-center mx-auto">
             
             <div className="gap-4">
                 {/* Row 1 */}

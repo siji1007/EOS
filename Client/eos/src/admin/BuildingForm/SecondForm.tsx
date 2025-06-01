@@ -1,6 +1,6 @@
 const SecondForm = () => {
   return (
-    <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto mt-8">
+    <div className=" rounded-lg w-full shadow-lg relative align-center mx-auto mt-8">
       <div className="grid grid-cols-3 gap-4">
         {/* Row 1 */}
         <div>

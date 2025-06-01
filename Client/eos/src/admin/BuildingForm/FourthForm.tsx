@@ -2,8 +2,8 @@
 
 const FourthForm = () => {
     return (
-         <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
-      <h1 className="text-2xl  text-center mb-8">Progress Flow in</h1>
+         <div className="rounded-lg w-full shadow-lg mx-auto">
+      <h1 className="text-lg text-center mb-2">Progress Flow in</h1>
       
       {/* Progress Flow Section */}
       <div className="mb-8">

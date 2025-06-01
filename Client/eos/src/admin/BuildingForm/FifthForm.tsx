@@ -27,7 +27,7 @@ const FifthForm = () => {
     setFormData(updatedData);
   };
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto mt-8">
+        <div className="rounded-lg w-full shadow-lg relative align-center mx-auto mt-8">
         <h3 className="text-xl font-semibold mb-6 text-center">Progress Flow in</h3>
 
         <div className="space-y-4">

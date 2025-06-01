@@ -16,7 +16,7 @@ const SeventhForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
+    <div className="rounded-lg w-full  mx-auto">
       <h1 className="text-2xl text-center mb-8">With Consent</h1>
       
       <div className="grid grid-cols-2 gap-6">

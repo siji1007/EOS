@@ -28,7 +28,7 @@ const FormLayout = () => {
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full">
       {/* Left Progress Bar */}
       <ProgressBar currentStep={step} totalSteps={forms.length} />
 

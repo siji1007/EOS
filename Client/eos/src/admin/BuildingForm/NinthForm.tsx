@@ -16,7 +16,7 @@ const NinthForm = () => {
   };
 
     return (
-        <div className="bg-white rounded-lg p-6 w-full shadow-lg mx-auto">
+        <div className="rounded-lg w-full shadow-lg mx-auto">
       <h1 className="text-2xl text-center mb-12">To be accomplished by lot owner</h1>
       
       <div className="space-y-8">

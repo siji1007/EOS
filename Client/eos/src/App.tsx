@@ -38,7 +38,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
