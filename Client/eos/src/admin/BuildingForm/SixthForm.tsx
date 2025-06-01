@@ -16,7 +16,7 @@ const SixthForm = () => {
   };
 
   return (
-    <div className="rounded-lg w-full shadow-lg mx-auto">
+    <div className="rounded-lg w-full mx-auto">
       <div className="grid grid-cols-2 gap-6">
         {/* Left Column */}
         <div className="space-y-6">

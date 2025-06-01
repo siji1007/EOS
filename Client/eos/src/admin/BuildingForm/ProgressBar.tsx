@@ -19,19 +19,18 @@ const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
   }, [currentStep]);
 
   return (
-    <div className="w-16 flex flex-col items-center py-4">
+    <div className="h-screen w-16 flex flex-col items-center py-4">
       {steps.map((step, index) => {
         const isDone = step < currentStep;
         return (
-          <div key={step} className="flex flex-col items-center relative z-10">
+          <div key={step} className="flex flex-col items-center flex-1">
             <div
-              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center relative
+              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center
                 ${isDone
                   ? "bg-blue-600 border-blue-800"
                   : "bg-white border-blue-300"
                 }`}
             >
-              {/* Show check icon if done, otherwise file icon */}
               {isDone ? (
                 <FaCheck
                   className={`w-4 h-4 text-white pointer-events-none ${
@@ -43,9 +42,10 @@ const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
               )}
             </div>
 
+            {/* Line connector */}
             {index < steps.length - 1 && (
               <div
-                className={`w-1 h-8 transition-colors duration-500 ease-in-out ${
+                className={`w-1 flex-1 transition-colors duration-500 ${
                   step < currentStep ? "bg-blue-600" : "bg-gray-300"
                 }`}
               />

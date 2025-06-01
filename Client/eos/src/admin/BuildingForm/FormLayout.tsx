@@ -27,14 +27,19 @@ const FormLayout = () => {
   const nextStep = () => setStep((prev) => Math.min(prev + 1, forms.length));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
+  const handleSubmit = () => {
+    // Add your final submission logic here
+    alert("Form submitted!");
+  };
+
   return (
     <div className="flex h-full">
       {/* Left Progress Bar */}
       <ProgressBar currentStep={step} totalSteps={forms.length} />
 
       {/* Right Form Content */}
-      <div className="flex-1 p-8 items-center justify-center">
-        <h2 className="text-center text-xl font-semibold mb-6">Application Form</h2>
+      <div className="flex-1 p-2 items-center justify-center">
+        <h2 className="text-center text-xl font-semibold mb-2">Application Form</h2>
 
         {forms[step - 1]}
 
@@ -50,12 +55,19 @@ const FormLayout = () => {
             <div />
           )}
 
-          {step < forms.length && (
+          {step < forms.length ? (
             <button
               onClick={nextStep}
               className="text-blue-600 font-medium hover:underline"
             >
               Next &raquo;
+            </button>
+          ) : (
+            <button
+              onClick={handleSubmit}
+              className="text-green-600 font-medium hover:underline"
+            >
+              Submit &#10003;
             </button>
           )}
         </div>

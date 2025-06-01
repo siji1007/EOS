@@ -6,7 +6,7 @@ const FirstForm = () => {
                 {/* Row 1 */}
                 <div>
                     <label className="block mb-1">Full Name:</label>
-                    <input type="text" className="w-full border rounded px-3 py-2" />
+                    <input type="text" className="w-full border rounded px-2 py-2" />
                 </div>
                 <div className="flex gap-4">
                     <div className="flex-1">
