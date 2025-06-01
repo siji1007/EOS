@@ -1,5 +1,6 @@
 import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserPlusIcon } from '@heroicons/react/24/outline';
 import Logo from '../assets/logo/logo.png'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -15,16 +16,17 @@ const Header = () => {
             </div>
           </div>
 
+        
           {/* Navigation */}
           <nav className="flex items-center space-x-6 text-sm font-medium">
-            <a href="/" className="flex items-center space-x-1 hover:text-gray-300">
+            <Link to="/" className="flex items-center space-x-1 hover:text-gray-300">
               <HomeIcon className="h-5 w-5" />
               <span>Home</span>
-            </a>
-            <a href="/about" className="flex items-center space-x-1 hover:text-gray-300">
+            </Link>
+            <Link to="/about" className="flex items-center space-x-1 hover:text-gray-300">
               <ChatBubbleLeftEllipsisIcon className="h-5 w-5" />
               <span>About</span>
-            </a>
+            </Link>
             <a href="/signup" className="flex items-center space-x-1 hover:text-gray-300">
               <UserPlusIcon className="h-5 w-5" />
               <span>Sign Up</span>
