@@ -44,7 +44,7 @@ const LandingPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 bg-gray-100">
+        <main className="flex-1 bg-gray-100">
             <Outlet />
         </main>
     </div>
