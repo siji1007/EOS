@@ -1,4 +1,4 @@
-const FirstForm = () => {
+const NinthForm = () => {
     return (
         <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
             
@@ -14,7 +14,7 @@ const FirstForm = () => {
                 <input type="text" className="w-full border rounded px-3 py-2" />
                 </div>
                 <div className="flex-1">
-                <label className="block mb-1">Date of application:</label>
+                <label className="block mb-1">Date of alication:</label>
                 <input type="date" className="w-full border rounded px-3 py-2" />
                 </div>
             </div>
@@ -83,4 +83,4 @@ const FirstForm = () => {
     );
 }
 
-export default FirstForm;
+export default NinthForm;

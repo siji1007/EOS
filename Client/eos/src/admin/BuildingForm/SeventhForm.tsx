@@ -1,4 +1,4 @@
-const FirstForm = () => {
+const SeventhForm = () => {
     return (
         <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
             
@@ -83,4 +83,4 @@ const FirstForm = () => {
     );
 }
 
-export default FirstForm;
+export default SeventhForm;

@@ -1,11 +1,13 @@
-const FirstForm = () => {
+
+
+const FourthForm = () => {
     return (
         <div className="bg-white rounded-lg p-6 w-full shadow-lg relative align-center mx-auto">
             
             <div className="grid grid-cols-2 gap-4">
             {/* Row 1 */}
             <div>
-                <label className="block mb-1">Full Name:</label>
+                <label className="block mb-1">FName:</label>
                 <input type="text" className="w-full border rounded px-3 py-2" />
             </div>
             <div className="flex gap-4">
@@ -83,4 +85,4 @@ const FirstForm = () => {
     );
 }
 
-export default FirstForm;
+export default FourthForm;

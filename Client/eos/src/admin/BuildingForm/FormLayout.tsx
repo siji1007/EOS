@@ -2,10 +2,26 @@ import { useState } from "react";
 import FirstForm from "./FirstForm";
 import SecondForm from "./SecondForm";
 import ThirdForm from "./ThirdForm";
+import FourthForm from "./FourthForm";
+import FifthForm from "./FifthForm";
+import SixthForm from "./SixthForm";
+import SeventhForm from "./SeventhForm";
+import EighthForm from "./EigthForm";
+import NinthForm from "./NinthForm";
 import ProgressBar from "./ProgressBar";
 
 const FormLayout = () => {
-  const forms = [<FirstForm />, <SecondForm />, <ThirdForm />]; // Add more forms here
+  const forms = [
+    <FirstForm />,
+    <SecondForm />,
+    <ThirdForm />,
+    <FourthForm />,
+    <FifthForm />,
+    <SixthForm />,
+    <SeventhForm />,
+    <EighthForm />,
+    <NinthForm />,
+  ];
   const [step, setStep] = useState(1);
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, forms.length));
@@ -17,7 +33,7 @@ const FormLayout = () => {
       <ProgressBar currentStep={step} totalSteps={forms.length} />
 
       {/* Right Form Content */}
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-8 items-center justify-center">
         <h2 className="text-center text-xl font-semibold mb-6">Application Form</h2>
 
         {forms[step - 1]}
