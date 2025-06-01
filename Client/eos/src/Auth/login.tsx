@@ -7,6 +7,11 @@ interface LoginModalProps { isOpen: boolean; onClose: () => void; }
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
     if (!isOpen) return null;
+    
+    const Login = (e: React.FormEvent) => {
+        navigate('/admin/Form')
+    }
+
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-60">
@@ -27,13 +32,13 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                         <input type="email" id="email" className="w-full px-4 py-2 rounded-full text-center italic text-black font-semibold bg-white placeholder:italic" placeholder="Usersample@gmail.com" required />
                     </section>
 
-                    <section className="mb-6">
+                    <section className="mb-6"> {/*  Password section */}
                         <label htmlFor="password" className="block text-base italic mb-1"> Password: </label>
                         <input type="password" id="password" className="w-full px-4 py-2 rounded-full text-center bg-white text-black font-medium" placeholder="••••••••" required />
                     </section>
                     
                     {/* Login Button */}
-                    <button type="submit" className="w-full border border-white text-white py-2 rounded-full hover:bg-white hover:text-[#2C3E50] transition" > Submit </button>
+                    <button type="submit" className="w-full border border-white text-white py-2 rounded-full hover:bg-white hover:text-[#2C3E50] transition" onClick={Login} > Submit </button>
                 </form>
 
                 <p className="mt-6 text-center text-sm italic">
