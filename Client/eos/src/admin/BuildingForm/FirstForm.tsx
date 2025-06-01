@@ -3,4 +3,4 @@ const FirstForm = () => {
         <h1>This is the FirstForm</h1>
     )
 }
-export default FirstForm
+export default FirstForm;

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="bg-[#304E6F] text-white shadow">
+    <header className="sticky top-0 bg-[#304E6F] text-white shadow z-50">
+
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}
