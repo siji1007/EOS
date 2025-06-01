@@ -15,13 +15,13 @@ const Home = () => {
          <img
     src={paper}
     alt="Paper graphic"
-    className="w-[50%] md:w-[65%] xl:w-[%] mx-auto mb-4"
+    className="w-[50%] md:w-[40%] xl:w-[%] mx-auto mb-4"
 />
             <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl px-4 py-4">
                 <button className="text-white font-extralight bg-transparent border-2 border-white rounded-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl h-16 md:h-[10vh] w-48 md:w-[20vw] transition hover:bg-[#385981] mb-6 md:mb-0">
                     Login
                 </button>
-                <img src="../src/assets/logo/logo.png" className="h-32 md:h-[30vh] aspect-auto" alt="EOS Logo" />
+                <img src="../src/assets/logo/logo.png" className="h-32 md:h-[28vh] aspect-auto" alt="EOS Logo" />
             </div>
          <h2 className="text-white italic text-lg sm:text-xl md:text-2xl lg:text-3xl px-4 py-8 text-center">
     <span className="text-[#1C80D5] font-bold not-italic">Sign up </span>
