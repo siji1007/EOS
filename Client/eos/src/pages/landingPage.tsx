@@ -20,7 +20,7 @@ const LandingPage = () => {
                 {/* Name and Role when expanded */}
                 {!collapsed && (
                 <div className="ml-3 flex-1 text-blue-900">
-                    <p className="font-semibold text-sm leading-tight"> Pangalan Ngani </p>
+                    <p className="font-semibold text-sm leading-tight">SiJi </p>
                     <p className="text-xs ">Admin</p>
                 </div>
                 )}

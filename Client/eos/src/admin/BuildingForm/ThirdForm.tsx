@@ -33,7 +33,7 @@ const ThirdForm = () => {
     <div className="rounded-lg w-full relative align-center mx-auto mt-8">
       <h3 className="text-xl font-semibold mb-6 text-center">Assessed Fee</h3>
 
-      <div className="grid grid-cols-5 gap-4 items-center">
+      <div className="grid grid-cols-4 gap-4 items-center">
         {rows.map((label, idx) => (
           <React.Fragment key={idx}>
             <section className="relative w-full mt-6 px-3 col-span-1">
@@ -64,13 +64,15 @@ const ThirdForm = () => {
         ))}
 
         {/* Total Row */}
-        <div className="col-span-1 font-semibold">Total</div>
-        <div className="col-span-4">
+
+        <div className="relative w-full mt-6 px-3 col-span-1">
+            <label htmlFor="" className='absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black'>Total</label>
+        
           <input 
           type="text" 
           value={`₱ ${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
           readOnly 
-          className="w-1/8 border border-black rounded px-3 py-2 focus:outline-none" />
+          className="w-full border border-black rounded px-3 py-2 focus:outline-none" />
         </div>
       </div>
     </div>

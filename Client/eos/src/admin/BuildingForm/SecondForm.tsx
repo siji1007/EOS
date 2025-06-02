@@ -42,7 +42,7 @@ const SecondForm = () => {
           <input type="text" className="w-full border border-black rounded px-3 py-2 focus:outline-none" />
         </section>
         <section className="relative w-full mt-6 px-3">
-          <label className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black">Prop. Date of Const. Expected Date of Completion</label>
+          <label className="absolute -top-1 ml-3 bg-gray-100 px-2 text-xs text-black">Prop. Date of Const. Expected Date of Completion</label>
           <input type="date" className="w-full border border-black rounded px-3 py-2 focus:outline-none" />
         </section>
 
