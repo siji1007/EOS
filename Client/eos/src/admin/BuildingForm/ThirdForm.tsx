@@ -36,17 +36,30 @@ const ThirdForm = () => {
       <div className="grid grid-cols-5 gap-4 items-center">
         {rows.map((label, idx) => (
           <React.Fragment key={idx}>
-            <label className="col-span-1">{label}</label>
-            <input
-              type="number"
-              placeholder="₱"
-              value={fees[idx]}
-              onChange={(e) => handleFeeChange(idx, e.target.value)}
-              className="w-full border rounded px-3 py-2"
-            />
-            <input type="text" placeholder="Assessed By" className="w-full border rounded px-3 py-2" />
-            <input type="number" placeholder="O.R. Number" className="w-full border rounded px-3 py-2" />
-            <input type="date" placeholder="__/__" className="w-full border rounded px-3 py-2" />
+            <section className="relative w-full mt-6 px-3 col-span-1">
+              <label htmlFor={`fee-${idx}`} className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black">{label}</label>
+              <input
+                id={`fee-${idx}`}
+                type="number"
+                placeholder="₱"
+                value={fees[idx]}
+                onChange={(e) => handleFeeChange(idx, e.target.value)}
+                className="w-full border border-black rounded px-3 py-2 focus:outline-none"
+                title={label}
+              />
+            </section>
+            <section className="relative w-full mt-6 px-3 col-span-1">
+              <label htmlFor={`assessedBy-${idx}`} className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black">Assessed By</label>
+              <input id={`assessedBy-${idx}`} type="text" placeholder="Assessed By" className="w-full border border-black rounded px-3 py-2 focus:outline-none" title="Assessed By" />
+            </section>
+            <section className="relative w-full mt-6 px-3 col-span-1">
+              <label htmlFor={`orNumber-${idx}`} className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black">O.R. Number</label>
+              <input id={`orNumber-${idx}`} type="number" placeholder="O.R. Number" className="w-full border border-black rounded px-3 py-2 focus:outline-none" title="O.R. Number" />
+            </section>
+            <section className="relative w-full mt-6 px-3 col-span-1">
+              <label htmlFor={`date-${idx}`} className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black">Date</label>
+              <input id={`date-${idx}`} type="date" placeholder="__/__" className="w-full border border-black rounded px-3 py-2 focus:outline-none" title="Date" />
+            </section>
           </React.Fragment>
         ))}
 
@@ -57,7 +70,7 @@ const ThirdForm = () => {
           type="text" 
           value={`₱ ${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
           readOnly 
-          className="w-1/8 border rounded px-3 py-2" />
+          className="w-1/8 border border-black rounded px-3 py-2 focus:outline-none" />
         </div>
       </div>
     </div>
