@@ -32,7 +32,7 @@ const FifthForm = () => {
 
         <div className="space-y-4">
             {departments.map((department, idx) => (
-            <section key={idx} className="grid grid-cols-4 gap-2 items-center relative w-full mt-6 px-3">
+            <section key={idx} className="grid grid-cols-3 gap-2 items-center relative w-full mt-6 px-3">
                 <label htmlFor={`department-${idx}`} className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black font-medium">{department}</label>
                 <div className='grid grid-cols-2 gap-3 col-span-1'>
                     <input
