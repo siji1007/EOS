@@ -1,18 +1,61 @@
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { useRef } from 'react';
+import Pin from '../assets/logo/pin.png'; // Your custom icon
+
 const Track = () => {
-    return (
-        <div>
-             <div style={{ width: '100%', height: '100vh' }}>
-                <iframe
-                    title="Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77565.09953391498!2d122.79272273364553!3d14.162077988969187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33964b5e490d6585%3A0x3295f3ec560d7d94!2sCamarines%20Norte%2C%20Bicol%20Region%2C%20Philippines!5e0!3m2!1sen!2sph!4v1696103229468!5m2!1sen!2sph"
-                    className="w-full h-full rounded"
-                    allowFullScreen=""
-                    loading="lazy"
-                    style={{ border: 0, width: '100%', height: '100%' }}
-                />
-            </div>
-        </div>
-    );
+  const markerRefs = useRef([]);
+
+  // 🧪 Dummy marker data (within Daet)
+  const addressList = [
+    { latitude: 14.1184, longitude: 122.9483, name: 'Public Market' },
+    { latitude: 14.1135, longitude: 122.9510, name: 'Fish Market' },
+    { latitude: 14.1108, longitude: 122.9455, name: 'Fruit Market' },
+  ];
+
+  const customIcon = new L.Icon({
+    iconUrl: Pin,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -35],
+  });
+
+  // Optional: Restrict map to Daet area
+  const daetBounds = [
+    [14.1000, 122.9400], // Southwest
+    [14.1300, 122.9600], // Northeast
+  ];
+
+  return (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <MapContainer
+        center={[14.115, 122.949]}
+        zoom={14}
+        scrollWheelZoom={true}
+        style={{ height: '100%', width: '100%' }}
+        maxBounds={daetBounds}
+        maxZoom={17}
+        minZoom={13}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
+        />
+
+        {addressList.map((address, index) => (
+          <Marker
+            key={index}
+            position={[address.latitude, address.longitude]}
+            icon={customIcon}
+            ref={(ref) => (markerRefs.current[index] = ref)}
+          >
+            <Popup>{address.name}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
+  );
 };
 
 export default Track;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import FirstForm from "./FirstForm";
 import SecondForm from "./SecondForm";
 import ThirdForm from "./ThirdForm";
@@ -22,58 +23,66 @@ const FormLayout = () => {
     <EighthForm />,
     <NinthForm />,
   ];
-  const [step, setStep] = useState(1);
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, forms.length));
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+    // Initialize step from URL query param "Form" or default to 1
+    const formParam = searchParams.get("Form") || "1";
+    const initialStep = parseInt(formParam, 10);
+    const [step, setStep] = useState(initialStep);
 
-  const handleSubmit = () => {
-    // Add your final submission logic here
-    alert("Form submitted!");
-  };
+    // Sync step state to URL param whenever step changes
+    useEffect(() => {
+    setSearchParams({ Form: step.toString() });
+    }, [step, setSearchParams]);
 
-  return (
-    <div className="flex h-full">
-      {/* Left Progress Bar */}
-      <ProgressBar currentStep={step} totalSteps={forms.length} />
+    const nextStep = () => setStep((prev) => Math.min(prev + 1, forms.length));
+    const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
-      {/* Right Form Content */}
-      <div className="flex-1 p-2 items-center justify-center">
-        <h2 className="text-center text-xl font-semibold mb-2">Application Form</h2>
+    const handleSubmit = () => {
+        alert("Form submitted!");
+    };
 
-        {forms[step - 1]}
+    return (
+        <div className="flex h-full">
+        <ProgressBar currentStep={step} totalSteps={forms.length} />
 
-        <div className="flex justify-between mt-4">
-          {step > 1 ? (
-            <button
-              onClick={prevStep}
-              className="text-blue-600 font-medium hover:underline"
-            >
-              &laquo; Back
-            </button>
-          ) : (
-            <div />
-          )}
+        <div className="flex-1 p-2 items-center justify-center">
+            <h2 className="text-center text-xl font-semibold mb-2">Application Form</h2>
 
-          {step < forms.length ? (
-            <button
-              onClick={nextStep}
-              className="text-blue-600 font-medium hover:underline"
-            >
-              Next &raquo;
-            </button>
-          ) : (
-            <button
-              onClick={handleSubmit}
-              className="text-green-600 font-medium hover:underline"
-            >
-              Submit &#10003;
-            </button>
-          )}
+            {forms[step - 1]}
+
+            <div className="flex justify-between mt-4">
+            {step > 1 ? (
+                <button
+                onClick={prevStep}
+                className="text-blue-600 font-medium hover:underline"
+                >
+                &laquo; Back
+                </button>
+            ) : (
+                <div />
+            )}
+
+            {step < forms.length ? (
+                <button
+                onClick={nextStep}
+                className="text-blue-600 font-medium hover:underline"
+                >
+                Next &raquo;
+                </button>
+            ) : (
+                <button
+                onClick={handleSubmit}
+                className="text-green-600 font-medium hover:underline"
+                >
+                Submit &#10003;
+                </button>
+            )}
+            </div>
         </div>
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default FormLayout;
