@@ -3,14 +3,16 @@ const SecondForm = () => {
     <div className=" rounded-lg w-full relative align-center mx-auto mt-8">
       <div className="grid grid-cols-3 gap-4">
         {/* Row 1 */}
-        <div>
-          <label className="block mb-1">Building</label>
-          <input type="text" className="w-full border rounded px-3 py-2" />
-        </div>
+        <section className="relative w-full mt-6 px-3">
+          <label  className="absolute -top-3 ml-3 bg-gray-100 px-2 text-sm text-black" >Building</label>
+          <input type="text" className="w-full border border-black rounded px-3 py-2 focus:outline-none" />
+        </section>
+
         <div>
           <label className="block mb-1">Cost</label>
           <input type="text" className="w-full border rounded px-3 py-2" />
         </div>
+
         <div>
           <label className="block mb-1">Number of storeys</label>
           <input type="text" className="w-full border rounded px-3 py-2" />
